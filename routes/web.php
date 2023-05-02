@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',function(){
+    return view('menu');
+})->name('menu');
+Route::get('/register','StudentController@studentRegister')->name('register');
+Route::get('/list','StudentController@index')->name('list');
+Route::get('/list/person','StudentController@personalInfo')->name('person');
+Route::get('/list/person/edit','StudentController@personalEdit')->name('persnalEdit');
+Route::get('/list/person/add','StudentController@gradesAdd')->name('add');
+Route::get('/list/person/grades','StudentController@gradesEdit')->name('gradesEdit');
