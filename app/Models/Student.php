@@ -18,4 +18,9 @@ class Student extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function getList(){
+        $students = Student::all();
+        return $students;
+    }
 }

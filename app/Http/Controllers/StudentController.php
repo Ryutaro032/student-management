@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
     public function index(){
-        // $model = new Student();
-        // $students = $model->getList();
-        $students = Student::all();
+         $model = new Student();
+         $students = $model->getList();
 
         return view('list',['students' => $students]);
     }
@@ -19,10 +18,12 @@ class StudentController extends Controller
     public function studentRegister(){
         return view('register');
     }
+    
+    public function personalInfo($id){
+        $model   = new Student();
+        $student = $model->getList()->find($id);
 
-    public function personalInfo(){
-        $students = Student::all();
-        return view('person',['students' => $students]);
+        return view('person',['student' => $student]);
     }
 
     public function personalEdit(){

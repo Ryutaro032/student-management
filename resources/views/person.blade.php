@@ -17,7 +17,6 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($students as $student)
                 <tr>
                     <td>{{ $student->grade }}</td>
                     <td>{{ $student->name }}</td>
@@ -38,7 +37,6 @@
                         </a>
                     </td>
                 </tr>
-                @endforeach
             </tbody>
         </table>
     </main>
